@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Satellite Visualizer/Home Page</title>
+    <link rel="stylesheet" href="styles/satVisualizerHome.css">
+    <link rel="stylesheet" href="styles/satVisualizerNavBar.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <a class="navbar-satVis" href="satVisualizerCover.html">Satellite Visualizer</a>
+      </div>
+      <div class="navbar-right">
+        <a class="navbar-home" href="satVisualizerHome.html">Home</a>
+        <a class="navbar-about" href="satVisualizerAbout.html">About</a>
+        <a class="navbar-help" href="satVisualizerHelp.html">Help</a>
+      </div>
+    </div>
+    <div class="body">
+      <div class="cesium-wigdet">
+        <h1>Cesium Widget</h1>
+      </div>
+      <div class="user-inputs">
+        <div class="row1-inputs">
+          <div class="walker-inputs">
+            <div>
+              <h1>Walker Inputs</h1>
+              <button class="open" id="open1">?</button>
+              <div class="popup" id="popup1">
+                <div class="popup-content walker-inputs">
+                  <h1>Walker Inputs</h1>
+                  <p>i: The inclination or tilt (in degrees) of all the orbits in the constellation.</p>
+                  <p>t: The number of satellites in the constellation. Make sure this number is a multiple of the number of orbital plantes (p). For example, if you have 4 planes, you cannot have 6 satellites.</p>
+                  <p>p: The number of orbital planes in the constellation. Make sure the number of satellites (t) can be equally divided among the planes. For example, if you have 6 satellites, you cannot have 4 planes since 6 cannot be divided equally into 4.</p>
+                  <p>f: The phasing parameter of the constellation. It describes the relative angular spacing between satellites in adjacent planes, such that the change in true anomaly (in degrees) for equivalent satellites in neighbouring planes is equal to f*360/t. Make sure this number is between 0 and p-1. For example, if the number of planes (p) is zero, f can can only be 1.</p>
+                  <p>alt: The altitude or height (in kilometers) of the constellation.</p>
+                  <button class="close" id="close1">Close</button>
+                </div>
+              </div>
+              <script>
+                const open1 = document.getElementById("open1");
+                const popup1 = document.getElementById("popup1");
+                const close1 = document.getElementById("close1");
+                open1.addEventListener("click", () => {
+                  popup1.classList.add("show");
+                });
+                close1.addEventListener("click", () => {
+                  popup1.classList.remove("show");
+                });
+              </script>
+            </div>
+            <input type="text" placeholder="i">
+            <input type="text" placeholder="t">
+            <input type="text" placeholder="p">
+            <input type="text" placeholder="f">
+            <input type="text" placeholder="alt">
+          </div>
+          <div class="epoch-ISL-inputs">
+            <div class="epoch-input">
+              <div>
+                <h1>Epoch</h1>
+                <button class="open" id="open2">?</button>
+                <div class="popup" id="popup2">
+                  <div class="popup-content epoch">
+                    <h1>Epoch</h1>
+                    <p>Epoch is the period of time in which the constellation is being visualized.</p>
+                    <p>Propogation Duration: How long (in days) the satellites will be propagated.</p>
+                    <p>Start Date: The start date of the propagation.</p>
+                    <button class="close" id="close2">Close</button>
+                  </div>
+                </div>
+                <script>
+                  const open2 = document.getElementById("open2");
+                  const popup2 = document.getElementById("popup2");
+                  const close2 = document.getElementById("close2");
+                  open2.addEventListener("click", () => {
+                    popup2.classList.add("show");
+                  });
+                  close2.addEventListener("click", () => {
+                    popup2.classList.remove("show");
+                  });
+                </script>
+              </div>
+              <div class="prop-dur">
+                <p>Propogation Duration:</p>
+                <input type="text" placeholder="days">
+              </div>
+              <div class="date">
+                <p>Start Date:</p>
+                <input type="date">
+              </div>
+            </div>
+            <div class="ISL-input">
+              <div>
+                <h1>Intersatellite Communication Threshold</h1>
+                <button class="open" id="open3">?</button>
+                <div class="popup" id="popup3">
+                  <div class="popup-content ISL-input">
+                    <h1>Intersatellite Communication Threshold</h1>
+                    <p>The maximum distance (in kilometers) between satellites for communication to be viable.</p>
+                    <button class="close" id="close3">Close</button>
+                  </div>
+                </div>
+                <script>
+                  const open3 = document.getElementById("open3");
+                  const popup3 = document.getElementById("popup3");
+                  const close3 = document.getElementById("close3");
+                  open3.addEventListener("click", () => {
+                    popup3.classList.add("show");
+                  });
+                  close3.addEventListener("click", () => {
+                    popup3.classList.remove("show");
+                  });
+                </script>
+              </div>
+              <div class="range">
+                <div class="sliderValue">
+                  <span id="span1">2500</span>
+                </div>
+                <div class="field">
+                  <div class="value left">0</div>
+                  <input id="input1" type="range" min="0" max="5000" value="2500" steps="1">
+                  <div class="value right">5000</div>
+                </div>
+              </div>
+              <script>
+                const slideValue1 = document.getElementById("span1");
+                const inputSlider1 = document.getElementById("input1");
+                inputSlider1.oninput = (()=>{
+                  let value = inputSlider1.value;
+                  slideValue1.textContent = value;
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="row2-inputs">
+          <div class="gs-inputs">
+            <div>
+              <h1>Ground Stations</h1>
+              <button class="open" id="open4">?</button>
+              <div class="popup" id="popup4">
+                <div class="popup-content GS">
+                  <h1>Ground Stations</h1>
+                  <p>The latitude and longitude (in degrees) of the ground station objects.</p>
+                  <button class="close" id="close4">Close</button>
+                </div>
+              </div>
+              <script>
+                const open4 = document.getElementById("open4");
+                const popup4 = document.getElementById("popup4");
+                const close4 = document.getElementById("close4");
+                open4.addEventListener("click", () => {
+                  popup4.classList.add("show");
+                });
+                close4.addEventListener("click", () => {
+                  popup4.classList.remove("show");
+                });
+              </script>
+            </div>
+            <p>GS1:</p>
+            <input class="lat-inputs" type="text" placeholder="lat">
+            <input type="text" placeholder="lon">
+            <p>GS2:</p>
+            <input class="lat-inputs" type="text" placeholder="lat">
+            <input type="text" placeholder="lon">
+            <p>GS3:</p>
+            <input class="lat-inputs" type="text" placeholder="lat">
+            <input type="text" placeholder="lon">
+            <p>GS4:</p>
+            <input class="lat-inputs" type="text" placeholder="lat">
+            <input type="text" placeholder="lon">
+            <p>GS5:</p>
+            <input class="lat-inputs" type="text" placeholder="lat">
+            <input type="text" placeholder="lon">
+          </div>
+          <div class="elev-sensor-inputs">
+            <div class="conic-sensor-inputs">
+              <div>
+                <h1>Conic Sensors</h1>
+                <button class="open" id="open5">?</button>
+                <div class="popup" id="popup5">
+                  <div class="popup-content conic-sensor">
+                    <h1>Conic Sensors</h1>
+                    <div class="cs-image-div">
+                      <p>The conic angle (in degrees) of the conic sensor.</p>
+                      <img src="/images/cs-diagram.jpg">
+                    </div>
+                    <button class="close" id="close5">Close</button>
+                  </div>
+                </div>
+                <script>
+                  const open5 = document.getElementById("open5");
+                  const popup5 = document.getElementById("popup5");
+                  const close5 = document.getElementById("close5");
+                  open5.addEventListener("click", () => {
+                    popup5.classList.add("show");
+                  });
+                  close5.addEventListener("click", () => {
+                    popup5.classList.remove("show");
+                  });
+                </script>
+              </div>
+              <div class="range">
+                <div class="sliderValue">
+                  <span id="span2">90</span>
+                </div>
+                <div class="field">
+                  <div class="value left">0</div>
+                  <input id="input2" type="range" min="0" max="180" value="90" steps="1">
+                  <div class="value right">180</div>
+                </div>
+              </div>
+              <script>
+                const slideValue2 = document.getElementById("span2");
+                const inputSlider2 = document.getElementById("input2");
+                inputSlider2.oninput = (()=>{
+                  let value = inputSlider2.value;
+                  slideValue2.textContent = value;
+                });
+              </script>
+            </div>
+            <div class="elevation-threshold">
+              <div>
+                <h1>GS to Satellite Communication Threshold</h1>
+                <button class="open" id="open6">?</button>
+                <div class="popup" id="popup6">
+                  <div class="popup-content elevation-threshold">
+                    <h1>Ground Station (GS) to Satellite Communication Threshold</h1>
+                    <div class="gs-to-sat-image-div">
+                      <p>The minimum elevation angle (in degrees) the satellites have to make with the ground stations for communication to be viable.</p>
+                      <img src="/images/elev-angle-diagram.jpg">
+                    </div>
+                    <button class="close" id="close6">Close</button>
+                  </div>
+                </div>
+                <script>
+                  const open6 = document.getElementById("open6");
+                  const popup6 = document.getElementById("popup6");
+                  const close6 = document.getElementById("close6");
+                  open6.addEventListener("click", () => {
+                    popup6.classList.add("show");
+                  });
+                  close6.addEventListener("click", () => {
+                    popup6.classList.remove("show");
+                  });
+                </script>
+              </div>
+              <div class="range">
+                <div class="sliderValue">
+                  <span id="span3">45</span>
+                </div>
+                <div class="field">
+                  <div class="value left">0</div>
+                  <input id="input3" type="range" min="0" max="90" value="45" steps="1">
+                  <div class="value right">90</div>
+                </div>
+              </div>
+              <script>
+                const slideValue3 = document.getElementById("span3");
+                const inputSlider3 = document.getElementById("input3");
+                inputSlider3.oninput = (()=>{
+                  let value = inputSlider3.value;
+                  slideValue3.textContent = value;
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="submit-button">
+          <button>Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

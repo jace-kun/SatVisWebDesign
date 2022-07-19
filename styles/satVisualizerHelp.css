@@ -1,0 +1,84 @@
+*{
+  background-color: #43567B;
+}
+.body{
+  width: 100%;
+  height: fit-content;
+}
+.walker-inputs, .epoch, .ISL-threshold, .GS, .CS-angle, .GS-to-sat-threshold{
+  width: 100%;
+  height: fit-content;
+}
+.container{
+  width: 87%;
+  height: fit-content;
+  margin-top: 25px;
+  margin-left: 98.865px;
+  margin-right: 98.865px;
+  border: 5px solid #1F325B;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #1F325B;
+}
+.container h1{
+  background-color: #fff;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.container p{
+  background-color: #fff;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+.container.GS-to-sat-threshold{
+  margin-bottom: 25px;
+}
+.container.epoch{
+  width: 37%;
+  margin-left: 479.117px;
+  margin-right: 479.117px;
+}
+.container.ISL-threshold{
+  width: 45.2%;
+  margin-left: 416.758px;
+  margin-right: 416.758px;
+}
+.container.CS-angle{
+  width: 45%;
+  margin-left: 418.2775px;
+  margin-right: 418.2775px;
+}
+.container.GS{
+  width: 35%;
+  margin-left: 491.703px;
+  margin-right: 491.703px;
+}
+.cs-image-div{
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.cs-image-div p{
+  margin-top: 125px;
+}
+.cs-image-div img{
+  width: 200px;
+  height: 300px;
+}
+.gs-to-sat-image-div{
+  display: grid;
+  grid-template-columns: 800px 1fr;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.gs-to-sat-image-div p{
+  margin-top: 115px;
+}
+.gs-to-sat-image-div img{
+  width: 500px;
+  height: 300px;
+}

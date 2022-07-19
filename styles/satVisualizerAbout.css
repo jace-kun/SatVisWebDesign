@@ -1,0 +1,76 @@
+*{
+  background-color: #43567B;
+}
+.body{
+  width: 100%;
+  height: fit-content;
+}
+.Manwei, .Jace, .Dan, .Ethan{
+  width: 100%;
+  height: fit-content;
+}
+.container{
+  width: 90%;
+  height: fit-content;
+  margin-top: 25px;
+  margin-left: 76.05px;
+  margin-right: 76.05px;
+  border: 5px solid #1F325B;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #1F325B;
+}
+.container h1, .Content, .Image, .Bio-LinkedIn, .Bio-LinkedIn p, .Bio-LinkedIn p a{
+  background-color: #fff;
+}
+.container h1{
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.container.container.Ethan{
+  margin-bottom: 25px;
+}
+.container.Manwei h1{
+  margin-left: 43px;
+  font-weight: 400;
+}
+.container.Jace h1{
+  margin-left: 82px;
+  font-weight: 400;
+}
+.container.Dan h1{
+  margin-left: 17px;
+  font-weight: 400;
+}
+.container.Ethan h1{
+  margin-left: 54px;
+  font-weight: 400;
+}
+.Content{
+  display: grid;
+  grid-template-columns: 225px 1fr;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+.Image{
+  width: 175px;
+  height: 220px;
+  object-fit: cover;
+}
+.Manwei-Bio{
+  margin-top: 15px;
+}
+.Jace-Bio{
+  margin-top: 32px;
+}
+.Dan-Bio{
+  margin-top: 50px;
+}
+.Ethan-Bio{
+  margin-top: 45px;
+}
+.LinkedIn{
+  margin-top: 25px;
+}

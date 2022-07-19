@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Satellite Visualizer/API Page</title>
+    <link rel="stylesheet" href="styles/satVisualizerHelp.css">
+    <link rel="stylesheet" href="styles/satVisualizerNavBar.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <a class="navbar-satVis" href="satVisualizerCover.html">Satellite Visualizer</a>
+      </div>
+      <div class="navbar-right">
+        <a class="navbar-home" href="satVisualizerHome.html">Home</a>
+        <a class="navbar-about" href="satVisualizerAbout.html">About</a>
+        <a class="navbar-help" href="satVisualizerHelp.html">Help</a>
+      </div>
+    </div>
+    <div class="body">
+      <div class="walker-inputs">
+        <div class="container walker-inputs">
+          <h1>Walker Inputs</h1>
+          <p>i: The inclination or tilt (in degrees) of all the orbits in the constellation.</p>
+          <p>t: The number of satellites in the constellation. Make sure this number is a multiple of the number of orbital plantes (p). For example, if you have 4 planes, you cannot have 6 satellites.</p>
+          <p>p: The number of orbital planes in the constellation. Make sure the number of satellites (t) can be equally divided among the planes. For example, if you have 6 satellites, you cannot have 4 planes since 6 cannot be divided equally into 4.</p>
+          <p>f: The phasing parameter of the constellation. It describes the relative angular spacing between satellites in adjacent planes, such that the change in true anomaly (in degrees) for equivalent satellites in neighbouring planes is equal to f*360/t. Make sure this number is between 0 and p-1. For example, if the number of planes (p) is zero, f can can only be 1.</p>
+          <p>alt: The altitude or height (in kilometers) of the constellation.</p>
+        </div>
+      </div>
+      <div class="epoch">
+        <div class="container epoch">
+          <h1>Epoch</h1>
+          <p>Epoch is the period of time in which the constellation is being visualized.</p>
+          <p>Propogation Duration: How long (in days) the satellites will be propagated.</p>
+          <p>Start Date: The start date of the propagation.</p>
+        </div>
+      </div>
+      <div class="ISL-threshold">
+        <div class="container ISL-threshold">
+          <h1>Intersatellite Communication Threshold</h1>
+          <p>The maximum distance (in kilometers) between satellites for communication to be viable.</p>
+        </div>
+      </div>
+      <div class="CS-angle">
+        <div class="container CS-angle">
+          <h1>Conic Sensors</h1>
+          <div class="cs-image-div">
+            <p>The conic angle (in degrees) of the conic sensor.</p>
+            <img src="/images/cs-diagram.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="GS">
+        <div class="container GS">
+          <h1>Ground Stations</h1>
+          <p>The latitude and longitude (in degrees) of the ground station objects.</p>
+        </div>
+      </div>
+      <div class="GS-to-sat-threshold">
+        <div class="container GS-to-sat-threshold">
+          <h1>Ground Station (GS) to Satellite Communication Threshold</h1>
+          <div class="gs-to-sat-image-div">
+            <p>The minimum elevation angle (in degrees) the satellites have to make with the ground stations for communication to be viable.</p>
+            <img src="/images/elev-angle-diagram.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
